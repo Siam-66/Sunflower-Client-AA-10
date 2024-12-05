@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-
+import Image1 from "/assets/Sunflower.png";
 const Footer = () => {
     return (
         <div>
         <footer className="footer bg-base-200 text-base-content py-3 px-10  flex justify-around items-center">
 <div >
   <aside>
-<img className="w-40 md:ml-6" src="https://i.ibb.co.com/xYFHPrm/1jp-card.jpg" alt="" />
+<img className="w-40 md:ml-6" src={Image1} alt="" />
 <p className="text-center max-sm:text-xs">
-Lingo Bingo Ltd.
+Sunflower Ltd.
   <br />
-  A Vocabulary Learning Application
+  A Visa Navigator Portal
 </p>
 
 <nav className=" mt-2 flex gap-4 max-sm:pl-5 md:place-self-center md:justify-self-center">

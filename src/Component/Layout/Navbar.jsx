@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 // import { FaUserCircle } from "react-icons/fa";
-
+import Image1 from "/assets/Sunflower.png";
 const Navbar = () => {
     const links = (
         <>
@@ -98,8 +98,8 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-start">
               <NavLink to="/" className="flex items-center justify-start cursor-pointer">
-                <img className="w-20" src="https://i.ibb.co.com/xYFHPrm/1jp-card.jpg" alt="Lingo Bingo Logo" />
-                <div className="font-semibold md:text-3xl text-lg">Lingo Bingo</div>
+                <img className="w-20" src={Image1} alt="Lingo Bingo Logo" />
+                <div className="font-semibold md:text-3xl text-lg">Sunflower</div>
               </NavLink>
             </div>
           </div>

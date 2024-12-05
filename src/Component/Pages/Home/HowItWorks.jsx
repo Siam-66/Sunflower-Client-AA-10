@@ -5,7 +5,7 @@ const HowItWorks = () => {
         {
             title: "Check Visa Requirements",
             description: "Enter your destination and nationality to view detailed visa requirements.",
-            icon: "https://cdn-icons-png.flaticon.com/512/847/847969.png", // Replace with actual icons
+            icon: "https://cdn-icons-png.flaticon.com/512/847/847969.png", 
         },
         {
             title: "Apply Online",

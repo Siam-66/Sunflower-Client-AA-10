@@ -1,11 +1,11 @@
 import Banner from "./Home/Banner";
-import PopularVisaCategories from "./Home/PopularVisaCategories";
+import WhyChooseUs from "./Home/WhyChooseUs";
 import HowItWorks from "./Home/HowItWorks";
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <PopularVisaCategories></PopularVisaCategories>
+            <WhyChooseUs></WhyChooseUs>
             <HowItWorks></HowItWorks>
         </div>
     );
