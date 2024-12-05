@@ -8,17 +8,27 @@ const Banner = () => {
         {
             title: "Welcome to Sunflower",
             description: "Simplify your visa journey with an all-in-one platform for visa requirements, online applications, and real-time tracking.",
-            background: "https://i.ibb.co/xYFHPrm/1jp-card.jpg", // Replace with actual banner images
+            background: "https://i.ibb.co/xYFHPrm/1jp-card.jpg",
         },
         {
             title: "Check Visa Requirements",
             description: "Quickly find visa requirements for your destination and ensure you're fully prepared for your next journey.",
-            background: "https://i.ibb.co/c6xqM85/2jp-card-jpg.jpg",
+            background: "https://i.ibb.co.com/1Q1rnW4/africa1.jpg",
         },
         {
             title: "Track Applications Effortlessly",
             description: "Stay updated on your visa application status with our real-time tracking system.",
-            background: "https://i.ibb.co/3TWkbC1/3jp-card-jpg.jpg",
+            background: "https://i.ibb.co.com/wCP91BZ/bangladesh1.jpg",
+        },
+        {
+            title: "Personalized Support",
+            description: "Get expert guidance and tailored solutions for your visa needs with our dedicated support team.",
+            background: "https://i.ibb.co/c6xqM85/2jp-card-jpg.jpg", 
+        },
+        {
+            title: "Your Trusted Travel Partner",
+            description: "Experience seamless travel planning with our user-friendly tools and comprehensive resources.",
+            background: "https://i.ibb.co.com/6FhBdgq/switzerland1.jpg", 
         },
     ];
 

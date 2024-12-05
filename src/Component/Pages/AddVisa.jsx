@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2'
 
 const AddVisa = () => {
 
@@ -22,10 +23,30 @@ const AddVisa = () => {
 
         const newSunflower = {countryImage, countryName, visaType,  processingTime, requiredDocuments, description, fee, validity, applicationMethod }
         console.log(newSunflower);
+        
+        fetch('http://localhost:5000/sunflower',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newSunflower)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Visa Application Created",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
+        })
 
-
-    alert("Visa added successfully!"); // Replace with a toast if needed later
-  };
+   
+  }
 
   return (
 <div className="max-w-4xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">

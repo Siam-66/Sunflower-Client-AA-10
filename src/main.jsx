@@ -31,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: "allVisas",
         element: <AllVisas></AllVisas>,
+        loader: () => fetch ('http://localhost:5000/sunflower')
       },
       {
         path: "myAddedVisas",
