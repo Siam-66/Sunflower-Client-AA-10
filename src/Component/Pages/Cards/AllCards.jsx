@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AllCards = ({sunflower}) => {
 
-    const {countryImage, countryName, visaType,  processingTime} = sunflower;
+    const {_id,countryImage, countryName, visaType,  processingTime} = sunflower;
 
     return (
 <div>
@@ -23,7 +23,7 @@ const AllCards = ({sunflower}) => {
         <strong>Processing Time:</strong> {processingTime}
     </p>
     <div className="card-actions justify-center mt-5">
-        <Link to="/allCardsDetails" className="btn bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-lg text-black font-bold rounded-xl">See Details</Link>
+        <Link to={`allVisaDetails/${_id}`} className="btn bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-lg text-black font-bold rounded-xl">See Details</Link>
     </div>
     </div>
 </div>

@@ -55,9 +55,9 @@ Sunflower Ltd.
 
   <nav>
 <h6 className="footer-title md:text-xl">Services</h6>
-<Link to="/startLearning" className="link link-hover">Start Learning</Link>
-<Link to="/tutorials" className="link link-hover">Tutorials</Link>
-<Link to="/myProfile" className="link link-hover">Profile</Link>
+<Link to="/addVisa" className="link link-hover">All visas</Link>
+<Link to="/myAddedVisas" className="link link-hover">My added visas</Link>
+<Link to="/myVisaApplications" className="link link-hover">My Visa applications</Link>
 
 </nav>
 <nav>
