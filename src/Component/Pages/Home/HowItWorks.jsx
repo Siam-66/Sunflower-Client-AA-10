@@ -20,8 +20,8 @@ const HowItWorks = () => {
     ];
 
     return (
-        <div className="bg-white py-12">
-            <h2 className="text-3xl font-bold text-center mb-10">How It Works</h2>
+        <div className="bg-base-100 py-12">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-900 via-yellow-500 to-yellow-900 bg-clip-text text-transparent text-center mb-10">How It Works</h2>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
                 {steps.map((step, index) => (
                     <div key={index} className="text-center">

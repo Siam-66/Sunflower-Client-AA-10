@@ -50,7 +50,7 @@ const AddVisa = () => {
 
   return (
 <div className="max-w-4xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
-  <h2 className="text-5xl text-yellow-500 font-bold text-center mb-6">Add Visa</h2>
+  <h2 className="text-5xl bg-gradient-to-r from-yellow-900 via-yellow-400 to-yellow-900 bg-clip-text text-transparent font-bold text-center mb-6">Add Visa</h2>
   <form onSubmit={handleSubmit}>
     {/* Country Image URL */}
     <div className="mb-4">
@@ -199,7 +199,7 @@ const AddVisa = () => {
     {/* Add Visa Button */}
     <button
       type="submit"
-      className="w-full bg-yellow-500 text-white text-xl py-2 rounded hover:bg-yellow-600"
+      className="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold text-xl py-2 rounded hover:bg-yellow-600"
     >
       Add Visa
     </button>

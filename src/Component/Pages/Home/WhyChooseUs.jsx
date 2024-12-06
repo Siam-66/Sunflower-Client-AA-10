@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
 
     return (
         <div className="bg-white py-16">
-            <h2 className="text-3xl font-bold text-center mb-12 text-yellow-600">
+            <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-yellow-900 via-yellow-400 to-yellow-900 bg-clip-text text-transparent">
                 Why Choose Sunflower?
             </h2>
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">

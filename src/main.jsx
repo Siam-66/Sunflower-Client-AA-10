@@ -14,6 +14,7 @@ import AddVisa from './Component/Pages/AddVisa';
 import AllVisas from './Component/Pages/AllVisas';
 import MyAddedVisas from './Component/Pages/MyAddedVisas';
 import MyVisaApplications from './Component/Pages/MyVisaApplications';
+import AllCardsDetails from './Component/Pages/Cards/AllCardsDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,8 +35,14 @@ const router = createBrowserRouter([
         loader: () => fetch ('http://localhost:5000/sunflower')
       },
       {
+        path: "allCardsDetails",
+        element: <AllCardsDetails></AllCardsDetails>,
+      },
+      {
         path: "myAddedVisas",
         element: <MyAddedVisas></MyAddedVisas>,
+        loader: () => fetch ('http://localhost:5000/sunflower')
+        
       },
       {
         path: "myVisaApplications",

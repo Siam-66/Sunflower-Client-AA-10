@@ -3,70 +3,69 @@ import { NavLink } from "react-router-dom";
 import Image1 from "/assets/Sunflower.png";
 const Navbar = () => {
     const links = (
-        <>
-          <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-            <NavLink
-              to="allVisas"
-              className={({ isActive }) =>
-                isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-              }
-            >
-              All visas
-            </NavLink>
-          </li>
-          {/* {user?.email && (
-            <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-              <NavLink
-                to="tutorials"
-                className={({ isActive }) =>
-                  isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-                }
-              >
-                Tutorials
-              </NavLink>
-            </li>
-          )} */}
-                      <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-              <NavLink
-                to="addVisa"
-                className={({ isActive }) =>
-                  isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-                }
-              >
-                Add Visa
-              </NavLink>
-            </li>
-          <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-            <NavLink
-              to="myAddedVisas"
-              className={({ isActive }) =>
-                isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-              }
-            >
-              My added visas
-            </NavLink>
-          </li>
-          <li className="hover:bg-sky-400 hover:text-white hover:rounded-2xl">
-            <NavLink
-              to="myVisaApplications"
-              className={({ isActive }) =>
-                isActive ? "bg-sky-500 text-white rounded-2xl px-3 py-2" : "px-3 py-2"
-              }
-            >
-              My Visa applications
-            </NavLink>
-          </li>
-        </>
+<>
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      Home
+    </NavLink>
+  </li>
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="allVisas"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      All visas
+    </NavLink>
+  </li>
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="addVisa"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      Add Visa
+    </NavLink>
+  </li>
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="myAddedVisas"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      My added visas
+    </NavLink>
+  </li>
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="myVisaApplications"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      My Visa applications
+    </NavLink>
+  </li>
+</>
+
       );
     return (
         <div>
@@ -99,7 +98,7 @@ const Navbar = () => {
             <div className="flex items-center justify-start">
               <NavLink to="/" className="flex items-center justify-start cursor-pointer">
                 <img className="w-20" src={Image1} alt="Lingo Bingo Logo" />
-                <div className="font-semibold md:text-3xl text-lg">Sunflower</div>
+                <div className="font-bold md:text-3xl text-lg">Sunflower </div>
               </NavLink>
             </div>
           </div>
@@ -147,7 +146,7 @@ const Navbar = () => {
               </div>
             </div> */}
                 <NavLink to="login"
-                      className="px-5 py-2 rounded-3xl md:text-xl text-sl font-semibold border-sky-500 hover:bg-gradient-to-r from-sky-300 via-sky-400 to-blue-500 hover:text-white border"
+                      className="px-5 py-2 rounded-3xl md:text-xl text-sl font-semibold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 hover:text-white border"
                     >
                       Log in
                     </NavLink>
