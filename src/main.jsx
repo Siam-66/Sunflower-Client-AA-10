@@ -14,12 +14,16 @@ import AddVisa from './Component/Pages/AddVisa';
 import AllVisas from './Component/Pages/AllVisas';
 import MyAddedVisas from './Component/Pages/MyAddedVisas';
 import MyVisaApplications from './Component/Pages/MyVisaApplications';
-import AllCardsDetails from './Component/Pages/Cards/AllCardsDetails';
+
 import AllVisaDetails from './Component/Pages/AllVisaDetails';
 import Signup from './Component/LogSign/Signup';
 import Login from './Component/LogSign/Login';
 import ForgetPassword from './Component/LogSign/ForgetPassword';
 import MyProfile from './Component/LogSign/MyProfile';
+import AllVisaDetailsHome from './Component/Pages/Cards/AllVisaDetailsHome';
+import AuthProvider from './Provider/AuthProvider';
+import PrivateRoute from './routes/PrivateRoute';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,7 +36,9 @@ const router = createBrowserRouter([
       },
       {
         path: "addVisa",
-        element: <AddVisa></AddVisa>,
+        element:<PrivateRoute>
+          <AddVisa></AddVisa>
+        </PrivateRoute>,
       },
       {
         path: "allVisas",
@@ -40,24 +46,33 @@ const router = createBrowserRouter([
         loader: () => fetch ('http://localhost:5000/sunflower')
       },
       {
-        path: "allCardsDetails",
-        element: <AllCardsDetails></AllCardsDetails>,
-      },
-      {
         path: "myAddedVisas",
-        element: <MyAddedVisas></MyAddedVisas>,
+        element: <PrivateRoute>
+          <MyAddedVisas></MyAddedVisas>
+        </PrivateRoute>,
         loader: () => fetch ('http://localhost:5000/sunflower')
 
         
       },
       {
         path: "myVisaApplications",
-        element: <MyVisaApplications></MyVisaApplications>,
+        element: <PrivateRoute>
+          <MyVisaApplications></MyVisaApplications>
+        </PrivateRoute>,
       },
 
       {
         path: 'allVisas/allVisaDetails/:id',
-        element: <AllVisaDetails />,
+        element: <PrivateRoute>
+          <AllVisaDetails />
+        </PrivateRoute> ,
+        loader: ({ params }) => fetch(`http://localhost:5000/sunflower/${params.id}`)
+      },
+      {
+        path: '/allVisasHome/allVisaDetailsHome/:id',
+        element:<PrivateRoute>
+          <AllVisaDetailsHome />
+        </PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/sunflower/${params.id}`)
       },
       {
@@ -74,7 +89,9 @@ const router = createBrowserRouter([
       },
       {
         path: "myProfile",
-        element: <MyProfile></MyProfile>,
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute> ,
       },
       
       
@@ -83,6 +100,9 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<RouterProvider router={router} />  
+    <AuthProvider>
+      <RouterProvider router={router} />  
+    </AuthProvider>
+
 </StrictMode>,
 )

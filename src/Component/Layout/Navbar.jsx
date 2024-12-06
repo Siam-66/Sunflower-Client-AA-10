@@ -1,7 +1,15 @@
+
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-// import { FaUserCircle } from "react-icons/fa";
+
+import { FaUserCircle } from "react-icons/fa";
 import Image1 from "/assets/Sunflower.png";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
     const links = (
 <>
   <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
@@ -28,6 +36,7 @@ const Navbar = () => {
       All visas
     </NavLink>
   </li>
+  {user?.email && (
   <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
     <NavLink
       to="addVisa"
@@ -40,6 +49,10 @@ const Navbar = () => {
       Add Visa
     </NavLink>
   </li>
+  
+    )}
+
+{user?.email && (
   <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
     <NavLink
       to="myAddedVisas"
@@ -52,6 +65,8 @@ const Navbar = () => {
       My added visas
     </NavLink>
   </li>
+)}
+{user?.email && (
   <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
     <NavLink
       to="myVisaApplications"
@@ -64,6 +79,7 @@ const Navbar = () => {
       My Visa applications
     </NavLink>
   </li>
+)}
 </>
 
       );
@@ -106,11 +122,11 @@ const Navbar = () => {
             <div className="menu menu-horizontal gap-2 px-1 text-xl">{links}</div>
           </div>
           <div className="navbar-end">
-            {/* <div className="flex items-center border-2 p-2 rounded-3xl border-sky-300">
+            <div className="flex items-center border- p-2 rounded-3xl border-sky-300">
               <div>
                 {user?.email ? (
                   <NavLink to="myProfile">
-                    <div className="w-12 hover:scale-105 duration-[0.5s] mr-2 border-2 p-[2px] rounded-full border-sky-500">
+                    <div className="w-12 hover:scale-105 duration-[0.5s] mr-2 border-2 p-[2px] rounded-full border-yellow-500">
                       <img
                         className="rounded-full"
                         alt={user?.displayName}
@@ -120,7 +136,7 @@ const Navbar = () => {
                   </NavLink>
                 ) : (
                   <div className="mr-2">
-                    <FaUserCircle className="size-10 text-sky-900" />
+                    <FaUserCircle className="size-10 text-yellow-500" />
                   </div>
                 )}
               </div>
@@ -130,26 +146,21 @@ const Navbar = () => {
                   {user?.email ? (
                     <button
                       onClick={logOut}
-                      className="px-5 py-2 rounded-3xl md:text-xl text-sl font-semibold border-sky-500 hover:bg-gradient-to-r from-sky-300 via-sky-400 to-blue-500 hover:text-white border"
+                      className="px-5 py-2 rounded-3xl md:text-xl text-lg font-semibold border-yellow-500 hover:bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black f hover:text-black border"
                     >
                       Log Out
                     </button>
                   ) : (
-                    <NavLink
-                      to="login"
-                      className="px-5 py-2 rounded-3xl md:text-xl text-sl font-semibold border-sky-500 hover:bg-gradient-to-r from-sky-300 via-sky-400 to-blue-500 hover:text-white border"
-                    >
-                      Log in
-                    </NavLink>
+                    <NavLink to="login"
+                    className="px-5 py-2 rounded-3xl md:text-xl text-lg font-semibold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 border"
+                  >
+                    Log in
+                  </NavLink>
                   )}
                 </div>
               </div>
-            </div> */}
-                <NavLink to="login"
-                      className="px-5 py-2 rounded-3xl md:text-xl text-sl font-semibold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 hover:text-white border"
-                    >
-                      Log in
-                    </NavLink>
+            </div>
+
           </div>
         </div>
       </div>
