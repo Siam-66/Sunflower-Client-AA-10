@@ -1,12 +1,49 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
+const MyVisaCard = ({ sunflower, handleUpdate }) => {
+    const {_id,countryImage, countryName, visaType,  processingTime, fee, validity, applicationMethod} = sunflower;
 
-const MyVisaCard = ({ sunflower, handleDelete, handleUpdate }) => {
-    const {countryImage, countryName, visaType,  processingTime, fee, validity, applicationMethod} = sunflower;
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+            
+            fetch(`http://localhost:5000/sunflower/${_id}`,{
+                method: 'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount > 0){
+                
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "This visa has been deleted.",
+                        icon: "success"
+                    });
+                
+                }
+            })
+
+            }
+          });
+    }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleModal = () => setIsModalOpen(!isModalOpen);
+
+
 
     return (
         <div className="card bg-base-100 shadow-xl border border-gray-200">
@@ -34,7 +71,7 @@ const MyVisaCard = ({ sunflower, handleDelete, handleUpdate }) => {
                     <strong>Fee:</strong> ${fee}
                 </p>
                 <p className="text-sm">
-                    <strong>Validity:</strong> {validity} months
+                    <strong>Validity:</strong> {validity}
                 </p>
                 <p className="text-sm">
                     <strong>Application Method:</strong> {applicationMethod}
@@ -53,7 +90,7 @@ const MyVisaCard = ({ sunflower, handleDelete, handleUpdate }) => {
 
                     {/* Delete Button */}
                     <button
-                        onClick={() => handleDelete(sunflower)}
+                        onClick={() => handleDelete(_id)}
                         className="btn bg-red-500 text-white font-bold rounded-xl shadow-md hover:bg-red-600 hover:shadow-lg"
                     >
                         Delete
