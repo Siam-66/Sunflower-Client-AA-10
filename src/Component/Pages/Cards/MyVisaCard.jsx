@@ -61,7 +61,7 @@ const MyVisaCard = ({ sunflower,sunflowers ,setSunflowers }) => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.modifiedCount > 0) {
-                    setIsModalOpen(false); // Close the modal
+                    setIsModalOpen(false);
                     Swal.fire({
                         position: "top-center",
                         icon: "success",
@@ -132,7 +132,7 @@ const MyVisaCard = ({ sunflower,sunflowers ,setSunflowers }) => {
                 </div>
             </div>
 
-            {/* Update Modal */}
+            {/* Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
                     <div className="bg-white rounded-xl p-6 w-[90%] max-w-lg shadow-lg">

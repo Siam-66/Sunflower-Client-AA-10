@@ -54,7 +54,7 @@ Sunflower Ltd.
 
 
   <nav>
-<h6 className="footer-title md:text-xl">Services</h6>
+<h6 className="footer-title md:text-xl ">Services</h6>
 <Link to="/addVisa" className="link link-hover">All visas</Link>
 <Link to="/myAddedVisas" className="link link-hover">My added visas</Link>
 <Link to="/myVisaApplications" className="link link-hover">My Visa applications</Link>
@@ -79,7 +79,7 @@ Sunflower Ltd.
 <hr />
 <div className="bg-base-200 text-black  p-4">
 
-<p className="text-center">Copyright © {new Date().getFullYear()} - All right reserved by Lingo Bingo Ltd.</p>
+<p className="text-center dark:text-white">Copyright © {new Date().getFullYear()} - All right reserved by Lingo Bingo Ltd.</p>
 </div>
     </div>
     );
