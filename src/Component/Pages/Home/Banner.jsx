@@ -2,6 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     const slides = [
@@ -61,9 +62,9 @@ const Banner = () => {
                         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 text-white">
                             <h1 className="text-3xl md:text-5xl font-bold">{slide.title}</h1>
                             <p className="mt-4 text-lg md:text-xl max-w-3xl">{slide.description}</p>
-                            <button className="mt-6 px-6 py-2 btn bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-lg text-black font-bold rounded-lg border-yellow-500  ">
-                                Learn More
-                            </button>
+                            <Link to="/moreAbout" className="mt-6 px-6 py-2 btn bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-lg text-black font-bold rounded-lg border-yellow-500  ">
+                            More About Us
+                            </Link>
                         </div>
                     </div>
                 ))}

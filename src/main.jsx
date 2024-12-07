@@ -3,9 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { StrictMode } from "react";
 
-import "./index.css"; // Include styles for dark/light themes
+import "./index.css";
 
-// Layouts and Pages
 import Root from "./Component/Layout/Root";
 import ErrorPage from "./Component/Pages/ErrorPage";
 import Home from "./Component/Pages/Home";
@@ -20,18 +19,19 @@ import ForgetPassword from "./Component/LogSign/ForgetPassword";
 import MyProfile from "./Component/LogSign/MyProfile";
 import AllVisaDetailsHome from "./Component/Pages/Cards/AllVisaDetailsHome";
 
-// Providers and Routes
 import AuthProvider from "./Provider/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
-
-// Router Configuration
+import AboutUs from "./Component/Pages/Home/AboutUs";
+import MoreAbout from "./Component/Pages/MoreAbout";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/", 
+        element: <Home /> ,
+      },
       {
         path: "addVisa",
         element: (
@@ -81,6 +81,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/sunflower/${params.id}`),
+      },
+
+      {
+        path:"moreAbout",
+        element:<MoreAbout></MoreAbout> ,
       },
       { path: "signup", element: <Signup /> },
       { path: "login", element: <Login /> },

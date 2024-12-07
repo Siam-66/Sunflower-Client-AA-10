@@ -4,7 +4,6 @@ import Image1 from "/assets/Sunflower.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ThemeToggle from "./ThemeToggle";
 import { FaUserCircle} from "react-icons/fa";
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -131,16 +130,20 @@ const Navbar = () => {
         <ThemeToggle />
 
         {/* User Profile / Log In */}
-        <div className="flex items-center border p-2 rounded-3xl border-yellow-300">
+        <div className="flex items-center  border p-2 rounded-3xl border-yellow-300">
           {user?.email ? (
+            
     <NavLink to="myProfile">
+      
     <img
-      className="w-12 h-12 rounded-full border-2 border-yellow-500"
+      className="w-12 h-12 mr-1 rounded-full border-2 border-yellow-500"
       src={user?.photoURL || "/default-avatar.png"}
       alt={user?.displayName || "User Avatar"}
       title={user?.displayName || "No Name Available"}
+      
     />
   </NavLink>
+  
           ) : (
             <FaUserCircle className="size-10 text-yellow-500" />
           )}
