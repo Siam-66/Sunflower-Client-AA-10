@@ -7,7 +7,7 @@ const NewVisaSix = () => {
 
     useEffect(() => {
         // Fetch the six most recent visa entries from the backend
-        fetch("http://localhost:5000/latestSunflowers")
+        fetch("https://assignment-10-sunflower-server.vercel.app/latestSunflowers")
             .then((res) => res.json())
             .then((data) => {
                 setLatestSunflower(data);

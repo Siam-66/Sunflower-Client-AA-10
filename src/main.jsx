@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "allVisas",
         element: <AllVisas />,
-        loader: () => fetch("http://localhost:5000/sunflower"),
+        loader: () => fetch("https://assignment-10-sunflower-server.vercel.app/sunflower"),
       },
       {
         path: "myAddedVisas",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             <MyAddedVisas />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/sunflower"),
+        loader: () => fetch("https://assignment-10-sunflower-server.vercel.app/sunflower"),
       },
       {
         path: "myVisaApplications",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
             <MyVisaApplications />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/applications"),
+        loader: () => fetch("https://assignment-10-sunflower-server.vercel.app/applications"),
       },
       {
         path: "allVisas/allVisaDetails/:id",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/sunflower/${params.id}`),
+          fetch(`https://assignment-10-sunflower-server.vercel.app/sunflower/${params.id}`),
       },
       {
         path: "/allVisasHome/allVisaDetailsHome/:id",
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/sunflower/${params.id}`),
+          fetch(`https://assignment-10-sunflower-server.vercel.app/sunflower/${params.id}`),
       },
 
       {

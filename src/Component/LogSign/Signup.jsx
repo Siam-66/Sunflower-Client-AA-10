@@ -55,7 +55,7 @@ const Signup = () => {
         const user = result.user;
         const createdAt=result?.user?.metadata?.creationTime;
         const newUser ={name, email, photo,createdAt}
-        fetch('http://localhost:5000/users',{
+        fetch('https://assignment-10-sunflower-server.vercel.app/users',{
           method:'POST',
           headers:{
               'content-type':'application/json'

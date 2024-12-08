@@ -24,7 +24,7 @@ const AddVisa = () => {
         const newSunflower = {countryImage, countryName, visaType,  processingTime, requiredDocuments, description, fee, validity, applicationMethod }
         console.log(newSunflower);
         
-        fetch('http://localhost:5000/sunflower',{
+        fetch('https://assignment-10-sunflower-server.vercel.app/sunflower',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

@@ -19,7 +19,7 @@ const MyVisaCard = ({ sunflower,sunflowers ,setSunflowers }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/sunflower/${_id}`, {
+                fetch(`https://assignment-10-sunflower-server.vercel.app/sunflower/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -51,7 +51,7 @@ const MyVisaCard = ({ sunflower,sunflowers ,setSunflowers }) => {
 
         const updatedSunflower = { countryName, visaType, processingTime, fee, validity, applicationMethod };
 
-        fetch(`http://localhost:5000/sunflower/${_id}`, {
+        fetch(`https://assignment-10-sunflower-server.vercel.app/sunflower/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

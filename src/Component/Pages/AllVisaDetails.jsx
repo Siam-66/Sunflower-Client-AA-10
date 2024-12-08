@@ -48,7 +48,7 @@ const {
     
         console.log(newApplication);
     
-        fetch('http://localhost:5000/applications', {
+        fetch('https://assignment-10-sunflower-server.vercel.app/applications', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
