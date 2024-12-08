@@ -140,11 +140,12 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end flex items-center gap-4">
+
         {/* Dark Mode Toggle */}
         
         <ThemeToggle />
 
-        {/* User Profile / Log In */}
+        {/* User Profile & Log In */}
         <div className="flex items-center  border p-2 rounded-3xl border-yellow-300">
           {user?.email ? (
             

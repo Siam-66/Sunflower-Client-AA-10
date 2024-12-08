@@ -21,31 +21,68 @@ const {
     validity,
     applicationMethod,} = sunflower;
 
-const handleApply = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const applicationData = {
-    email: formData.get("email"),
-    firstName: formData.get("firstName"),
-    lastName: formData.get("lastName"),
-    appliedDate: new Date().toISOString().split("T")[0], 
-    fee,
-    };
-
-    console.log(applicationData); 
 
 
-    Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title: "Visa Application Created",
-    showConfirmButton: false,
-    timer: 3000,
-    });
+    const handleApply = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const firstName = form.firstName.value;
+        const lastName = form.lastName.value;
+        const appliedDate = new Date().toISOString().split("T")[0]; // Use current date here
+        const feeValue = fee; // Use the fee from the component state
     
-    setShowModal(false);
-
-};
+        const newApplication = {
+            email,
+            firstName,
+            lastName,
+            appliedDate,
+            fee: feeValue,
+            countryImage,
+            countryName,
+            visaType,
+            processingTime,
+            validity,
+            applicationMethod
+        };
+    
+        console.log(newApplication);
+    
+        fetch('http://localhost:5000/applications', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newApplication)
+        })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return res.json();
+        })
+        .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Visa Application Created",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            Swal.fire({
+                position: "top-center",
+                icon: "error",
+                title: "Failed to create application",
+                showConfirmButton: true
+            });
+        });
+    };
 
 return (
     <div className="container mx-auto p-5">
@@ -110,6 +147,7 @@ return (
                 Email
                 </label>
                 <input
+                
                 type="email"
                 name="email"
                 id="email"

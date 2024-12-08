@@ -61,6 +61,7 @@ const router = createBrowserRouter([
             <MyVisaApplications />
           </PrivateRoute>
         ),
+        loader: () => fetch("http://localhost:5000/applications"),
       },
       {
         path: "allVisas/allVisaDetails/:id",
