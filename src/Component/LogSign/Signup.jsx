@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
@@ -52,6 +53,29 @@ const Signup = () => {
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
+        const createdAt=result?.user?.metadata?.creationTime;
+        const newUser ={name, email, photo,createdAt}
+        fetch('http://localhost:5000/users',{
+          method:'POST',
+          headers:{
+              'content-type':'application/json'
+          },
+          body:JSON.stringify(newUser)        
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log('user created to db',data);
+          if(data.insertedId){
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "New User Created",
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+        })
+
         setUser(user);
         return updateUserProfile({ displayName: name, photoURL: photo });
       })

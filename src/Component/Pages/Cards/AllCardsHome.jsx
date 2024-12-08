@@ -25,7 +25,7 @@ return (
         <div className="card-body">
         <div className="flex items-center justify-start gap-5">
         <h2 className="card-title text-2xl font-semibold">{countryName}</h2>
-        <div className="badge badge-secondary border-yellow-500 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-sm  text-black  mt-2">NEW</div>
+        <div className="badge badge-secondary border-yellow-500 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-sm font-semibold text-black  mt-2">NEW</div>
         </div>
         
         

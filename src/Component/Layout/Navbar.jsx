@@ -80,11 +80,26 @@ const Navbar = () => {
     </NavLink>
   </li>
 )}
+{!user?.email && (
+  <li className="hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-300 hover:to-yellow-500 hover:text-black font-semibold hover:rounded-2xl">
+    <NavLink
+      to="moreAbout"
+      className={({ isActive }) =>
+        isActive
+          ? "bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-black font-semibold rounded-2xl px-3 py-2"
+          : "px-3 py-2"
+      }
+    >
+      About Us
+    </NavLink>
+  </li>
+)}
+
 </>
   );
 
   return (
-    <div className="navbar bg-base-100  text-black">
+    <div className="navbar bg-base-100/85 z-50 sticky top-0 text-black">
       <div className="navbar-start">
         <div className="dropdown">
           <button
@@ -126,7 +141,7 @@ const Navbar = () => {
 
       <div className="navbar-end flex items-center gap-4">
         {/* Dark Mode Toggle */}
-
+        
         <ThemeToggle />
 
         {/* User Profile / Log In */}
@@ -137,15 +152,14 @@ const Navbar = () => {
       
     <img
       className="w-12 h-12 mr-1 rounded-full border-2 border-yellow-500"
-      src={user?.photoURL || "/default-avatar.png"}
-      alt={user?.displayName || "User Avatar"}
-      title={user?.displayName || "No Name Available"}
-      
+      alt={user?.displayName}
+      src={user?.photoURL}
     />
   </NavLink>
   
           ) : (
-            <FaUserCircle className="size-10 text-yellow-500" />
+            
+            <FaUserCircle className="size-10  text-yellow-500" />
           )}
           {user?.email ? (
             <button

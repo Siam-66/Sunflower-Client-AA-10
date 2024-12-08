@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AllCardsHome from "../Cards/AllCardsHome";
+import { Link } from "react-router-dom";
 
 const NewVisaSix = () => {
     const [latestSunflower, setLatestSunflower] = useState([]);
@@ -25,6 +26,14 @@ const NewVisaSix = () => {
                     <AllCardsHome key={sunflower._id} sunflower={sunflower}></AllCardsHome>
                 ))}
             </div>
+            <div className="card-actions justify-center mt-5">
+            <Link
+            to="/allVisas"
+            className=" px-10 py-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-3xl text-black font-semibold rounded-xl"
+            >
+            See all visas
+            </Link>
+        </div>
         </div>
     );
 };

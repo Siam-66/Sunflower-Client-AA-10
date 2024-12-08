@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const AboutUs = () => {
   return (
@@ -21,10 +22,16 @@ const AboutUs = () => {
             Our <span className="text-yellow-500">Mission</span>
           </h2>
           <p className="text-lg leading-relaxed">
-            At Sunflower, our mission is to make the visa application process
-            seamless, transparent, and accessible to everyone. With years of
-            experience, we strive to connect aspiring travelers with the best
-            visa solutions for their needs.
+            <Typewriter
+              words={[
+                "At Sunflower, our mission is to make the visa application process seamless, transparent, and accessible to everyone. With years of experience, we strive to connect aspiring travelers with the best visa solutions for their needs.",
+              ]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={10}
+              deleteSpeed={100}
+            />
           </p>
         </div>
       </div>
@@ -43,9 +50,16 @@ const AboutUs = () => {
             Our <span className="text-yellow-500">Vision</span>
           </h2>
           <p className="text-lg leading-relaxed">
-            We envision a world where borders don’t limit opportunities. Our
-            team is dedicated to creating a future where your dreams of
-            exploring, studying, or working abroad are only a few steps away.
+            <Typewriter
+              words={[
+                "We envision a world where borders don’t limit opportunities. Our team is dedicated to creating a future where your dreams of exploring, studying, or working abroad are only a few steps away.",
+              ]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={10}
+              deleteSpeed={100}
+            />
           </p>
         </div>
       </div>
@@ -64,9 +78,16 @@ const AboutUs = () => {
             Our <span className="text-yellow-500">Values</span>
           </h2>
           <p className="text-lg leading-relaxed">
-            We are committed to integrity, transparency, and customer
-            satisfaction. These core values guide us in everything we do,
-            ensuring that our users feel supported every step of the way.
+            <Typewriter
+              words={[
+                "We are committed to integrity, transparency, and customer satisfaction. These core values guide us in everything we do, ensuring that our users feel supported every step of the way.",
+              ]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={10}
+              deleteSpeed={100}
+            />
           </p>
         </div>
       </div>
