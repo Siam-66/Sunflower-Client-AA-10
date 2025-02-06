@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-# **Project Name: Sunflower🌻
+# Project Name: Sunflower🌻
 =======
 # Project Name: Sunflower
->>>>>>> 00004ecac377ec02707801b971d8fce1d4a6a509
 
 ## Live Website Link
 [**https://sunflower-66.netlify.app/**](#)
